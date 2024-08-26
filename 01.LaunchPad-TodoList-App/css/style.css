@@ -14,7 +14,7 @@ body {
   max-width: 320px;
   height: 640px;
   margin: 0 auto;
-  padding: 20px;
+  padding: 30px 20px 20px 20px;
   background-color: #fff;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
   border-radius: 25px;
@@ -51,8 +51,6 @@ body {
   color: #777;
   font-weight: 500;
 }
-
-/*task-app-header ends here */
 
 /*tasklist styles starts here */
 
@@ -100,4 +98,55 @@ body {
 .empty-state-heading {
   font-size: 18px;
   padding-bottom: 15px;
+}
+
+/*task-input-section*/
+.task-input-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  width: 100%;
+}
+.task-input-section input,
+.task-input-section button {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+}
+.task-input {
+  width: 100%;
+  padding: 13px;
+  border-radius: 6px;
+  border: 1px solid #dcdcdc;
+  font-size: 13px;
+  font-weight: 500;
+  margin-bottom: 15px;
+  box-sizing: border-box;
+}
+.task-input-section .task-input {
+  width: 100%;
+}
+.task-input::placeholder {
+  font-weight: 500;
+  color: #777;
+}
+.task-input:focus {
+  outline: none;
+}
+.add-task {
+  width: 100%;
+  background-color: #5438dc;
+  color: #fff;
+  font-size: 13px;
+  padding: 13px;
+  border-radius: 6px;
+  cursor: pointer;
+  border: none;
+  text-transform: uppercase;
+}
+.add-task:disabled {
+  background-color: #74767d;
+  color: #ffffff;
+  cursor: not-allowed;
 }
