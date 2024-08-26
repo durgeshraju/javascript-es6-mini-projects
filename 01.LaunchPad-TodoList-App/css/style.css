@@ -54,6 +54,8 @@ body {
 
 /*task-app-header ends here */
 
+/*tasklist styles starts here */
+
 .task-item {
   display: flex;
   align-items: center;
@@ -87,4 +89,15 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+/* empty state styles */
+
+.empty-state-container {
+  margin: 30px 0;
+  text-align: center;
+}
+.empty-state-heading {
+  font-size: 18px;
+  padding-bottom: 15px;
 }
