@@ -15,5 +15,6 @@ const btnAddTaskHandler = (e) => {
   const task = taskInput.value.trim();
   console.log('Add Task:', task);
   taskForm.reset();
+  addTask.setAttribute('disabled', true);
 };
 addTask.addEventListener('click', btnAddTaskHandler);
