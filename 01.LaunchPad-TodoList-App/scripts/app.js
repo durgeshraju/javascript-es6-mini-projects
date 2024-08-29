@@ -3,11 +3,19 @@ const addTask = document.querySelector('.add-task');
 const taskForm = document.querySelector('#taskForm');
 const taskList = document.querySelector('.task-list');
 const taskItem = document.querySelector('.task-item');
+const emptyStateContainer = document.querySelector('.empty-state-container');
 
 // Task list
 
 const tasks = [];
-console.log('Task List:', tasks);
+console.log('Task List:', tasks.length);
+
+const toggleEmptyState = () => {
+  const isEmpty = tasks.length === 0;
+  console.log('isEmpty:', isEmpty);
+  emptyStateContainer.classList.toggle('is-visible', isEmpty);
+  emptyStateContainer.classList.toggle('is-hidden', !isEmpty);
+};
 
 // Render tasks
 const renderTasks = () => {
@@ -41,6 +49,8 @@ const btnAddTaskHandler = (e) => {
   e.preventDefault();
   const task = taskInput.value.trim();
   renderTasks(tasks.push(task));
+  toggleEmptyState();
+
   taskForm.reset();
   addTask.setAttribute('disabled', true);
 };
