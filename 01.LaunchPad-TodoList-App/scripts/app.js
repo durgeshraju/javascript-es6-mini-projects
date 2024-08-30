@@ -4,15 +4,10 @@ const taskForm = document.querySelector('#taskForm');
 const taskList = document.querySelector('.task-list');
 const taskItem = document.querySelector('.task-item');
 const emptyStateContainer = document.querySelector('.empty-state-container');
-
-// Task list
-
-const tasks = [];
-console.log('Task List:', tasks.length);
+const clearTasks = document.querySelector('#TasksClear');
 
 const toggleEmptyState = () => {
   const isEmpty = tasks.length === 0;
-  console.log('isEmpty:', isEmpty);
   emptyStateContainer.classList.toggle('is-visible', isEmpty);
   emptyStateContainer.classList.toggle('is-hidden', !isEmpty);
 };
@@ -50,10 +45,50 @@ const btnAddTaskHandler = (e) => {
   const task = taskInput.value.trim();
   renderTasks(tasks.push(task));
   toggleEmptyState();
-
+  setTasks(tasks);
   taskForm.reset();
   addTask.setAttribute('disabled', true);
 };
 
 // Add task button event listener
 addTask.addEventListener('click', btnAddTaskHandler);
+
+// Local storage
+
+// Get tasks
+const getTasks = () => {
+  const tasks = localStorage.getItem('tasks');
+  return tasks ? JSON.parse(tasks) : [];
+};
+
+// Set tasks
+const setTasks = (tasks) => {
+  localStorage.setItem('tasks', JSON.stringify(tasks));
+};
+
+// Load tasks from local storage
+const tasks = getTasks();
+renderTasks();
+toggleEmptyState();
+
+// Delete task event handler
+
+const deleteTaskHandler = (e) => {
+  e.preventDefault();
+  if (e.target.classList.contains('delete-task')) {
+    const index = e.target.getAttribute('data-index');
+    tasks.splice(index, 1);
+    setTasks(tasks);
+    renderTasks();
+    toggleEmptyState();
+  }
+};
+
+taskList.addEventListener('click', deleteTaskHandler);
+
+// Clear tasks event handler
+
+const clearTasksHandler = (e) => {
+  console.log('clear tasks', e.target);
+};
+clearTasks.addEventListener('click', clearTasksHandler);
