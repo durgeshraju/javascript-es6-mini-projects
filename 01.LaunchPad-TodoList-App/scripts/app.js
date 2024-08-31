@@ -5,11 +5,18 @@ const taskList = document.querySelector('.task-list');
 const taskItem = document.querySelector('.task-item');
 const emptyStateContainer = document.querySelector('.empty-state-container');
 const clearTasks = document.querySelector('#TasksClear');
+const taskAppHeader = document.querySelector('.task-app-header');
+
+// Toggle empty state visibility based on tasks length
 
 const toggleEmptyState = () => {
   const isEmpty = tasks.length === 0;
   emptyStateContainer.classList.toggle('is-visible', isEmpty);
   emptyStateContainer.classList.toggle('is-hidden', !isEmpty);
+
+  const isTasks = tasks.length > 0;
+  taskAppHeader.classList.toggle('is-visible', isTasks);
+  taskAppHeader.classList.toggle('is-hidden', !isTasks);
 };
 
 // Render tasks
