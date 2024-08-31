@@ -89,6 +89,10 @@ taskList.addEventListener('click', deleteTaskHandler);
 // Clear tasks event handler
 
 const clearTasksHandler = (e) => {
-  console.log('clear tasks', e.target);
+  e.preventDefault();
+  tasks.splice(0, tasks.length);
+  setTasks([]);
+  renderTasks();
+  toggleEmptyState();
 };
 clearTasks.addEventListener('click', clearTasksHandler);
