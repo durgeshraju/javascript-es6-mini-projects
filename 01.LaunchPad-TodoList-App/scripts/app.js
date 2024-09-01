@@ -19,6 +19,14 @@ const toggleEmptyState = () => {
   taskAppHeader.classList.toggle('is-hidden', !isTasks);
 };
 
+// task-status
+
+const taskStatus = () => {
+  const taskStatusElement = document.querySelector('.task-status');
+  const totalTasks = tasks.length;
+  taskStatusElement.innerHTML = `(2/${totalTasks}) Completed Tasks`;
+};
+
 // Render tasks
 const renderTasks = () => {
   taskList.innerHTML = '';
@@ -33,6 +41,7 @@ const renderTasks = () => {
       </li>
     `;
   });
+  taskStatus();
 };
 
 // Add task input event handler
