@@ -24,7 +24,7 @@ const toggleEmptyState = () => {
 const taskStatus = () => {
   const taskStatusElement = document.querySelector('.task-status');
   const totalTasks = tasks.length;
-  taskStatusElement.innerHTML = `(2/${totalTasks}) Completed Tasks`;
+  taskStatusElement.innerHTML = `Your task list has ${totalTasks} tasks.`;
 };
 
 // Render tasks
@@ -33,11 +33,8 @@ const renderTasks = () => {
   tasks.forEach((task, index) => {
     taskList.innerHTML += `
       <li class="task-item">
-        <input type="checkbox" class="task-checkbox" />
         <p class="task-text">${task}</p>
-        <a href="#" class="delete-task" data-index="${index}">
-          <i class="far fa-trash-alt"></i>
-        </a>
+        <a href="#" class="delete-task" data-index="${index}"></a>
       </li>
     `;
   });
