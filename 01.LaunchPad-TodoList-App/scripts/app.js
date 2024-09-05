@@ -89,6 +89,8 @@ toggleEmptyState();
 const deleteTaskHandler = (e) => {
   e.preventDefault();
   if (e.target.classList.contains('delete-task')) {
+    const taskText = e.target.previousElementSibling.textContent;
+    confirm(`Are you sure you want to delete the task "${taskText}"?`);
     const index = e.target.getAttribute('data-index');
     tasks.splice(index, 1);
     setTasks(tasks);
