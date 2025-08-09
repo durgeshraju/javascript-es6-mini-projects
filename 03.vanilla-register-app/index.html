@@ -9,29 +9,37 @@
 </head>
 
 <body class="d-flex align-items-center py-4 bg-body-tertiary">
-    <main class="w-100 m-auto">
-        <form>
-            <div class="mb-3">
-                <label for="username" class="form-label">Username</label>
-                <input type="email" class="form-control" id="username" placeholder="Enter username">
+    <main class="container">
+        <div class="row justify-content-md-center my-3">
+            <div class="col col-lg-5">
+                <form>
+                    <h2 class="pt-3 py-2">Register with us.
+                        <hr />
+                    </h2>
+                    <div class="mb-3">
+                        <label for="username" class="form-label">Username</label>
+                        <input type="email" class="form-control" id="username" placeholder="Enter username">
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email address</label>
+                        <input type="email" class="form-control" id="email" placeholder="name@example.com">
+                    </div>
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="password" placeholder="Enter password">
+                    </div>
+                    <div class="mb-3">
+                        <label for="confrimPassword" class="form-label">Confrim Password</label>
+                        <input type="password" class="form-control" id="confrimPassword"
+                            placeholder="Enter password again">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
             </div>
-            <div class="mb-3">
-                <label for="email" class="form-label">Email address</label>
-                <input type="email" class="form-control" id="email" placeholder="name@example.com">
-            </div>
-            <div class="mb-3">
-                <label for="password" class="form-label">Password</label>
-                <input type="password" class="form-control" id="password" placeholder="Enter password">
-            </div>
-            <div class="mb-3">
-                <label for="confrimPassword" class="form-label">Confrim Password</label>
-                <input type="password" class="form-control" id="confrimPassword" placeholder="Enter password again">
-            </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
+        </div>
     </main>
     <!-- Load JS after HTML parsed -->
-    <script type="module" src="main.js"></script>
+    <script type="text/javascript" src="main.js"></script>
 </body>
 
 </html>
